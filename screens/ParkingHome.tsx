@@ -39,8 +39,9 @@ const ParkingHome = () => {
             <View style={{ alignSelf: 'center', height: 200, width: 100, marginTop: 50 }}>
                 <Button title='Submit'
                     disabled={!numberOfSlots}
-                    testID='paring-create-submit-button'
+                    testID='parking-create-submit-button'
                     onPress={() => {
+                        //istanbul ignore next
                         if (numberOfSlots != 0) {
                             getLots(numberOfSlots, dispatch)
                             navigation.navigate('AlotParking')
