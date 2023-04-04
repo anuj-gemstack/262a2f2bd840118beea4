@@ -11,7 +11,7 @@
     "test":"jest --verbose --coverage --forceExit"
   },
   "jest":{
-    "present":"jest-expo"
+    "preset":"jest-expo"
   },
   "dependencies": {
     "@react-native-community/datetimepicker": "6.1.3",

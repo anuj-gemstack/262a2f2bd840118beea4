@@ -19,7 +19,7 @@ interface INumberOfSlots {
 const App = () => {
   const [numberOfSlots, setNumberOfSlots] = useState<any>("")
   const [lots, setLots] = useState<any>([])
-  const [registraionNumber, setRegistraionNumber] = useState<any>(null)
+  const [registrationNumber, setRegistrationNumber] = useState<any>(null)
   const [date, setDate] = useState<any>(new Date())
   const [show, setShow] = useState<any>(false)
   const [api, setApi] = useState<any>({ isLoading: true, data: {} })
@@ -38,9 +38,9 @@ const App = () => {
       let p: any = ap[ri]
       let pl: any = [...lots]
       let index = pl.findIndex((i: any) => i?.id == p?.id)
-      pl[index] = { ...p, vehicle: registraionNumber, entryDateTime: date }
+      pl[index] = { ...p, vehicle: registrationNumber, entryDateTime: date }
       setLots(pl)
-      setRegistraionNumber("")
+      setRegistrationNumber("")
     } else {
       Alert.alert("", "No parking available")
     }
@@ -82,7 +82,7 @@ const App = () => {
         setDate(payload.date)
         return;
       case "SET_REGISTRATION":
-        setRegistraionNumber(payload.registraionNumber)
+        setRegistrationNumber(payload.registrationNumber)
         return;
       case "ON_DATE_CHANGE":
         onChange(payload.selectedDate)
@@ -103,7 +103,7 @@ const App = () => {
   }
 
   return (
-    <AppContext.Provider value={{ onChange, show, registraionNumber, date, lots, numberOfSlots, dispatch }}>
+    <AppContext.Provider value={{ onChange, show, registrationNumber, date, lots, numberOfSlots, dispatch }}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="ParkingHome">
           <Stack.Screen name="ParkingHome">

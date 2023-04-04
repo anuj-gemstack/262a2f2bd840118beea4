@@ -60,7 +60,7 @@ describe("Parking lot drawing",()=>{
 
         const {getByTestId} = render(
         <AppContext.Provider value={{dispatch:mock}}>
-            <AllocateParking setRegistraionNumber={mock}/>
+            <AllocateParking setRegistrationNumber={mock}/>
         </AppContext.Provider>);
         const foundText = getByTestId(testTextName)
         fireEvent.changeText(foundText,"MP09QE2134")
